@@ -49,4 +49,7 @@ target_include_directories(cuda-matrix-multiply PRIVATE
 
 target_sources(cuda-matrix-multiply PRIVATE
     src/main.cu
+    src/interractive/calculateWidth.cpp
+    src/vector/initialize.cpp
+    src/vector/print.cpp
 )
