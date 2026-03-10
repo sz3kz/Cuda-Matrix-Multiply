@@ -52,4 +52,5 @@ target_sources(cuda-matrix-multiply PRIVATE
     src/interractive/calculateWidth.cpp
     src/vector/initialize.cpp
     src/vector/print.cpp
+    src/vector/multiply.cu
 )
