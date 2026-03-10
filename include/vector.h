@@ -7,7 +7,7 @@
 
 namespace vector{
   int * initialize(unsigned int length, unsigned int upper_limit );
-  void print(const char * prompt, int * vector, unsigned int length, unsigned int width);
+  void print(const char * prompt, int * vector, unsigned int dimension, unsigned int width);
   #ifdef __CUDACC__
   #endif
 }
