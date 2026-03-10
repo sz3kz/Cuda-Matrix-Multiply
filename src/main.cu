@@ -10,6 +10,11 @@ int main(){
   host_vector_B = vector::initialize(VECTOR_DIMENSION*VECTOR_DIMENSION, RAND_UPPER_LIMIT);
   host_vector_C = new int [VECTOR_DIMENSION*VECTOR_DIMENSION] ();
 
+  puts("\t\tWOLFRAM SYNTAX");
+  vector::print_wolfram("Vector A", host_vector_A, VECTOR_DIMENSION);
+  vector::print_wolfram("Vector B", host_vector_B, VECTOR_DIMENSION);
+
+  puts("\t\tHUMAN SYNTAX");
   vector::print("Vector A", host_vector_A, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
   vector::print("Vector B", host_vector_B, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
@@ -39,6 +44,7 @@ int main(){
 
   cudaMemcpy(host_vector_C, device_vector_C, sizeof(int) * VECTOR_DIMENSION*VECTOR_DIMENSION, cudaMemcpyDeviceToHost);
 
+  puts("\t\tRESULT");
   vector::print("Vector C", host_vector_C, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
   delete[] host_vector_A;
