@@ -12,7 +12,6 @@ int main(){
 
   vector::print("Vector A", host_vector_A, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
   vector::print("Vector B", host_vector_B, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
-  vector::print("Vector C", host_vector_C, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
 
   int * device_vector_A, * device_vector_B, * device_vector_C;
 
