@@ -39,7 +39,7 @@ int main(){
   // We take advantage of this by checking the value of blockDim.(x|y)  and blockIdx.(x|y)
   // (VECTOR_DIMENSION + block.? - 1 / block.?) computes the number of x|y blocks
   //   needed to store the vector dimension correctly (in threads)
-  dim3 grid(( VECTOR_DIMENSION + block.x - 1 ) / block.x, ( VECTOR_DIMENSION + block.y - 1) / block.y);
+  dim3 grid(vector::calculateBlockAmount(VECTOR_DIMENSION, block.x), vector::calculateBlockAmount(VECTOR_DIMENSION, block.y));
 
   // One might think that this would create a grid of blocks, of which are
   // comprised of threads, making this a 3d construct, unapplicable for 2d matrixes.

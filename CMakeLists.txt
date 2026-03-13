@@ -54,4 +54,5 @@ target_sources(cuda-matrix-multiply PRIVATE
     src/vector/print.cpp
     src/vector/multiply.cu
     src/vector/printWolfram.cpp
+    src/vector/calculateBlockAmount.cpp
 )

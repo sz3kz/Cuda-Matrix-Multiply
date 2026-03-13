@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-constexpr int VECTOR_DIMENSION = 3;
-constexpr int RAND_UPPER_LIMIT = 10;
-constexpr int THREADS_PER_BLOCK = 10;
+constexpr unsigned int VECTOR_DIMENSION = 3;
+constexpr unsigned int RAND_UPPER_LIMIT = 10;
+constexpr unsigned int THREADS_PER_BLOCK = 10;
 
 #endif
