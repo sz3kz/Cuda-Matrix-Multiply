@@ -53,5 +53,5 @@ target_sources(cuda-matrix-multiply PRIVATE
     src/vector/initialize.cpp
     src/vector/print.cpp
     src/vector/multiply.cu
-    src/vector/print_wolfram.cpp
+    src/vector/printWolfram.cpp
 )

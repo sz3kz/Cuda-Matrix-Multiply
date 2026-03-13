@@ -1,6 +1,6 @@
 #include "../../include/vector.h"
 
-void vector::print_wolfram(const char * prompt, int * vector, unsigned int dimension){
+void vector::printWolfram(const char * prompt, int * vector, unsigned int dimension){
   printf("%s:", prompt);
 
   printf("{{%d",vector[0 + 0 * dimension]);

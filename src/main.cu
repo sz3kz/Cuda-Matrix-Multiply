@@ -11,8 +11,8 @@ int main(){
   host_vector_C = new int [VECTOR_DIMENSION*VECTOR_DIMENSION] ();
 
   puts("\t\tWOLFRAM SYNTAX");
-  vector::print_wolfram("Vector A", host_vector_A, VECTOR_DIMENSION);
-  vector::print_wolfram("Vector B", host_vector_B, VECTOR_DIMENSION);
+  vector::printWolfram("Vector A", host_vector_A, VECTOR_DIMENSION);
+  vector::printWolfram("Vector B", host_vector_B, VECTOR_DIMENSION);
 
   puts("\t\tHUMAN SYNTAX");
   vector::print("Vector A", host_vector_A, VECTOR_DIMENSION, interractive::calculateWidth(RAND_UPPER_LIMIT));
