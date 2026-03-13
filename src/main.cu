@@ -38,8 +38,17 @@ int main(){
   // The same as block, define it 2-dimensionally
   // We take advantage of this by checking the value of blockDim.(x|y)  and blockIdx.(x|y)
   // (VECTOR_DIMENSION + block.? - 1 / block.?) computes the number of x|y blocks
-  //   needed to store the vector dimension correctly
+  //   needed to store the vector dimension correctly (in threads)
   dim3 grid(( VECTOR_DIMENSION + block.x - 1 ) / block.x, ( VECTOR_DIMENSION + block.y - 1) / block.y);
+
+  // One might think that this would create a grid of blocks, of which are
+  // comprised of threads, making this a 3d construct, unapplicable for 2d matrixes.
+  // This is wrong.
+  // This syntax, coupled with the previous 2 operations, spawns a grid of blocks
+  // with the amount of blocks calculated specifically, so that there exist one
+  // thread for each matrix cell (excess is ignored)
+  // WRONG: 	block -> 1 matrix cell (but doable ofc)
+  // CORRECT:	block -> THREADS_PER_BLOCK matrix cells, thread -> 1 matrix cell
   vector::multiply<<<grid, block>>>(device_vector_A, device_vector_B, device_vector_C, VECTOR_DIMENSION);
 
   cudaMemcpy(host_vector_C, device_vector_C, sizeof(int) * VECTOR_DIMENSION*VECTOR_DIMENSION, cudaMemcpyDeviceToHost);
